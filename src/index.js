@@ -1,18 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
+import 'bulma/css/bulma.css'
+import './styles.scss'
+import carSalesReducer from './reducers/carSalesReducer'
+
+const store = createStore(carSalesReducer)
+
 ReactDOM.render(
-  <Providor>
+  <Provider store={store}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </Providor>
+  </Provider>
   ,
   document.getElementById('root')
 );
@@ -20,4 +24,3 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
