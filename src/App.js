@@ -1,11 +1,16 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+import Header from './components/Header'
 
-      </header>
+const App = props => {
+  return (
+    <div className="boxes">
+      <div className="box">
+        <Header />
+        <div className="box">
+
+        </div>
+      </div>
     </div>
   );
 }
